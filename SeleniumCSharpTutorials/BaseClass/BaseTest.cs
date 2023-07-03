@@ -13,15 +13,15 @@ namespace SeleniumCSharpTutorials.BaseClass
     {
         public IWebDriver driver;
 
-        [OneTimeSetUp]
+        [SetUp]
         public void Open()
         {
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            driver.Url = "https://www.facebook.com/";
+            driver.Url = "https://web.archive.org/web/20180801193357/https://www.facebook.com/";
         }
 
-        [OneTimeTearDown]
+        [TearDown]
         public void Close()
         {
             driver.Quit();
